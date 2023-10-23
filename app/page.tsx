@@ -1,9 +1,10 @@
 import CardComponent from "@/components/Card";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <CardComponent />
     </div>
   );
 };
+export default Page;
