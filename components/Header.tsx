@@ -5,13 +5,16 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import {} from "react-icons/ai";
 import { BsChevronRight } from "react-icons/bs";
 import { useState } from "react";
+import useMenuRef from "@/app/hooks/useMenuRef";
 
 const Header = () => {
   const [nav, setNav] = useState(false);
+  const [categoryContent, setCategoryContent] = useState(false);
+  let navbarRef = useMenuRef(setNav);
   return (
-    <nav className="flex justify-between items-center py-4 px-6">
+    <nav className="flex justify-between items-center px-6 shadow-md">
       {/* KIRI */}
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center pl-2">
         {/* logo */}
         <div className="text-lg font-bold cursor-pointer">Logo</div>
         {/* search-bar */}
@@ -24,19 +27,65 @@ const Header = () => {
           />
         </div>
         {/* links */}
-        <ul className="hidden tablet:flex ml-2">
-          <li>
-            <Link href="/" className="py-2 px-4 hover:text-blue-800">
+        <ul className="hidden relative tablet:flex ml-2">
+          <li className="relative group/categories py-4">
+            <Link href="/" className="px-4 hover:text-blue-800">
               Kategori
             </Link>
+            {/* navigation content */}
+            <div className="hidden group-hover/categories:flex flex-row text-sm left-0 top-14 bg-white border absolute">
+              {/* navigation categories */}
+              <ul className="py-2 px-3 flex flex-col gap-y-4 w-60">
+                <li
+                  className={`flex justify-between items-center hover:text-blue-800 cursor-pointer ${
+                    categoryContent && "text-blue-800"
+                  }`}
+                  onMouseEnter={() => setCategoryContent(true)}
+                >
+                  <p>Programming</p>
+                  <BsChevronRight size={15} />
+                </li>
+                <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
+                  <p>Design</p>
+                  <BsChevronRight size={15} />
+                </li>
+                <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
+                  <p>Bisnis dan Finansial</p>
+                  <BsChevronRight size={15} />
+                </li>
+                <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
+                  <p>Psikologi</p>
+                  <BsChevronRight size={15} />
+                </li>
+              </ul>
+              {/* contents inside navigation categories */}
+              <ul
+                className={`py-2 px-3 flex-col gap-y-4 w-60 border-l ${
+                  categoryContent ? "flex" : "hidden"
+                }`}
+              >
+                <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
+                  <p>Pengembangan Web</p>
+                </li>
+                <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
+                  <p>Pengembangan Android</p>
+                </li>
+                <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
+                  <p>Pengembangan Game</p>
+                </li>
+                <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
+                  <p>Robotik</p>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li>
-            <Link href="/" className="py-2 px-4 hover:text-blue-800">
+          <li className="py-4">
+            <Link href="/" className="px-4 hover:text-blue-800">
               Program
             </Link>
           </li>
-          <li>
-            <Link href="/" className="py-2 px-4 hover:text-blue-800">
+          <li className="py-4">
+            <Link href="/" className="px-4 hover:text-blue-800">
               Tentang kami
             </Link>
           </li>
@@ -54,38 +103,41 @@ const Header = () => {
       {/* burger button */}
       <div
         onClick={() => setNav(!nav)}
-        className="tablet:hidden cursor-pointer "
+        className={`tablet:hidden cursor-pointer ${nav && "hidden"}`}
       >
         <AiOutlineMenu size={30} />
       </div>
       {/* small media sidebar */}
-      {nav && (
-        <div className="flex flex-col tablet:hidden absolute top-0 left-0 h-full w-[70%] bg-slate-300">
-          <div className="flex flex-col items-start py-4 border-b-2 gap-y-3 px-4">
-            <button className="text-blue-700">Login</button>
-            <button className="text-blue-700">Daftar</button>
+      <div
+        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 left-0 duration-200 ease-in-out h-full w-[70%] bg-slate-300 ${
+          nav ? "scale-x-100" : "scale-x-0"
+        }`}
+        ref={navbarRef}
+      >
+        <div className="flex flex-col items-start py-4 border-b-2 gap-y-3 px-4 relative">
+          <button className="text-blue-700">Login</button>
+          <button className="text-blue-700">Daftar</button>
+          <div
+            className="absolute -right-16 border rounded-full p-2 bg-slate-300 cursor-pointer"
+            onClick={() => setNav(!nav)}
+          >
+            <AiOutlineClose size={30} color="gray" />
           </div>
-          <ul className="flex flex-col px-4 gap-y-2 mt-4">
-            <li className="flex items-center justify-between">
-              <Link href="/" className="">
-                Kategori
-              </Link>
-              <BsChevronRight size={15} />
-            </li>
-            <li className="flex items-center justify-between">
-              <Link href="/" className="">
-                Program
-              </Link>
-              <BsChevronRight size={15} />
-            </li>
-            <li>
-              <Link href="/" className="">
-                Tentang kami
-              </Link>
-            </li>
-          </ul>
         </div>
-      )}
+        <ul className="flex flex-col px-4 gap-y-2 mt-4">
+          <li className="flex items-center justify-between">
+            <Link href="/">Kategori</Link>
+            <BsChevronRight size={15} />
+          </li>
+          <li className="flex items-center justify-between">
+            <Link href="/">Program</Link>
+            <BsChevronRight size={15} />
+          </li>
+          <li>
+            <Link href="/">Tentang kami</Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
