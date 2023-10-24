@@ -25,7 +25,10 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "react-tilt": "^1.0.2",
+    "framer-motion": "^10.13.0",
+    "maath": "^0.7.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,10 +1,6 @@
 import CardComponent from "@/components/Card";
 
 const Page = () => {
-  return (
-    <div>
-      <CardComponent />
-    </div>
-  );
+  return <CardComponent />;
 };
 export default Page;
