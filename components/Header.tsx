@@ -12,7 +12,7 @@ const Header = () => {
   const [categoryContent, setCategoryContent] = useState(false);
   let navbarRef = useMenuRef(setNav);
   return (
-    <nav className="flex justify-between items-center px-6 shadow-md">
+    <nav className="flex justify-between items-center px-6 py-4 tablet:py-0 shadow-md">
       {/* KIRI */}
       <div className="flex flex-row items-center pl-2">
         {/* logo */}

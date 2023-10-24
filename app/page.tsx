@@ -1,6 +1,6 @@
 import CardComponent from "@/components/Card";
 
 const Page = () => {
-  return <CardComponent />;
+  // return <CardComponent />;
 };
 export default Page;
