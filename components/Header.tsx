@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import {} from "react-icons/ai";
 import { BsChevronRight } from "react-icons/bs";
 import { useState } from "react";
 import useMenuRef from "@/app/hooks/useMenuRef";
@@ -16,13 +15,13 @@ const Header = () => {
       {/* KIRI */}
       <div className="flex flex-row items-center pl-2">
         {/* logo */}
-        <div className="text-lg font-bold cursor-pointer">Logo</div>
+        <div className="text-lg font-bold cursor-pointer">OpenEdu</div>
         {/* search-bar */}
         <div className="hidden xs:flex relative ml-6 ">
           <BiSearch className="absolute left-2 top-2" color="gray" />
           <input
             type="text"
-            className="focus:outline focus:outline-blue-300 duration-200 h-8 flex items-center pr-2 pl-8 outline outline-1 outline-slate-500 border-gray-300 rounded-full text-sm "
+            className="focus:outline focus:outline-blue-500 duration-200 h-8 flex items-center pr-2 pl-8 outline outline-1 outline-slate-500 border-gray-300 rounded-full text-sm "
             placeholder="cari sesuatu..."
           />
         </div>
@@ -109,7 +108,7 @@ const Header = () => {
       </div>
       {/* small media sidebar */}
       <div
-        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 left-0 duration-200 ease-in-out h-full w-[70%] bg-slate-300 ${
+        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 left-0 duration-200 ease-in-out h-full w-[70%] z-50 bg-slate-100 ${
           nav ? "scale-x-100" : "scale-x-0"
         }`}
         ref={navbarRef}
