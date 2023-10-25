@@ -75,7 +75,7 @@ const Footer = () => {
         </div>
       </div>
       {/* copyright */}
-      <div className="flex items-center h-16 border-t-2 mt-6 text-xs sm:text-lg">
+      <div className="flex items-center h-16 border-t-2 mt-6 text-xs sm:text-md">
         © 2023 OpenEdu Inc. All rights reserved.
       </div>
     </footer>
