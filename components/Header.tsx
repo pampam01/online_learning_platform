@@ -30,12 +30,12 @@ const Header = () => {
           </div>
           {/* links */}
           <ul className="hidden relative tablet:flex ml-2">
-            <li className="relative group/categories py-4">
+            <li className="relative group/categories py-5">
               <Link href="/" className="px-4 hover:text-blue-800">
                 Kategori
               </Link>
               {/* navigation content */}
-              <div className="hidden group-hover/categories:flex flex-row text-sm left-0 top-14 bg-white border absolute">
+              <div className="hidden group-hover/categories:flex flex-row text-sm left-0 top-16 bg-white border absolute">
                 {/* navigation categories */}
                 <ul className="py-2 px-3 flex flex-col gap-y-4 w-60">
                   <li
@@ -81,12 +81,12 @@ const Header = () => {
                 </ul>
               </div>
             </li>
-            <li className="py-4">
+            <li className="py-5">
               <Link href="/" className="px-4 hover:text-blue-800">
                 Program
               </Link>
             </li>
-            <li className="py-4">
+            <li className="py-5">
               <Link href="/" className="px-4 hover:text-blue-800">
                 Tentang kami
               </Link>
@@ -112,8 +112,8 @@ const Header = () => {
       </div>
       {/* small media sidebar */}
       <div
-        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 duration-200 ease-in-out h-full w-[70%] z-50 bg-slate-100 ${
-          nav ? " left-0" : " left-[-650px]"
+        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 duration-500 ease-in-out h-full w-[70%] z-50 bg-slate-100 ${
+          nav ? " left-0" : "overflow-hidden left-[-650px]"
         }`}
         ref={navbarRef}
       >
