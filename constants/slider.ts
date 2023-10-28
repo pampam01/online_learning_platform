@@ -18,7 +18,7 @@ export const ServiceData = [
   {
     icon: RxCrop,
     title: "Development",
-    content: "Lorem ipsum dolor sit /amet, consectetur adipiscing elit.",
+    content: "Lorem ipsum dolor sit /amet, consectetur adipiscing elit. ",
     backgroundImage: SpaceCity9,
   },
   {

@@ -1,6 +1,6 @@
 "use client";
 
-import { StaticImageData } from "next/image";
+
 import { useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
@@ -10,9 +10,6 @@ interface CarouselProps {
 export default function SliderMain({ images }: CarouselProps) {
   const [current, setCurrent] = useState(0);
 
-  if (images === null) {
-    return <div>not found</div>;
-  }
   const currentImage = images[current];
 
   const prevImage = () => {
