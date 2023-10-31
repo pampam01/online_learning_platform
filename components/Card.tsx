@@ -16,44 +16,37 @@ import { Button } from "./ui/button";
 import { fadeIn } from "@/utils/motion";
 import { Tilt } from "react-tilt";
 
-type CardProps = () => any;
+type CardProps = () => JSX.Element;
 
-// const defaultOptions = {
-//   reverse: false, // reverse the tilt direction
-//   max: 35, // max tilt rotation (degrees)
-//   perspective: 10000, // Transform perspective, the lower the more extreme the tilt gets.
-//   scale: 1.1, // 2 = 200%, 1.5 = 150%, etc..
-//   speed: 100, // Speed of the enter/exit transition
-//   transition: true, // Set a transition on enter/exit.
-//   axis: null, // What axis should be disabled. Can be X or Y.
-//   reset: true, // If the tilt effect has to be reset on exit.
-//   easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
-// };
 const CardComponent: CardProps = () => {
   return (
-    <div className="inline-block max-w-[300px] max-h-[800px] shadow-2xl transform  hover:scale-105 ">
-      <Card className=" bg-[#151030] text-white ">
-        <Tilt>
-          <div className="flex p-8">
-            <Image
-              src={Gambar}
-              width={270}
-              height={68}
-              alt="Gambar"
-              className="overflow-hidden rounded-tl-lg rounded-tr-lg"
-            />
-          </div>
+    <div className=" w-auto h-auto max-w-xs shadow-2xl transition ease-in-out hover:scale-95 md:max-w-xl m-5 ">
+      <Card className=" bg-[#151030] text-white md:flex md:flex-row ">
+        <div className="flex justify-center p-8 items-center">
+          <Image
+            src={Gambar}
+            width={270}
+            height={68}
+            alt="Gambar"
+            className=""
+          />
+        </div>
+        <div>
           <CardContent className="flex flex-col gap-10 pt-8">
             <div className="flex justify-between">
               <div className="flex gap-1 h-4 items-center justify-center">
                 <div className="w-10 h-full rounded-full grid place-items-center ">
-                  <Play size={22} />
+                  <Play size={30} />
                 </div>
-                <span>leasons</span>
+                <span className="text-sm pt-3">leasons</span>
               </div>
-              <Badge className="bg-white text-black">new course</Badge>
+              <Badge className="bg-white text-black hover:text-white hover:bg-sky-600 md:mt-1">
+                new course
+              </Badge>
             </div>
-            <b className="text-1xl leading-[10px] inline-block">Belajar JS</b>
+            <b className="text-1xl leading-[10px] inline-block">
+              Belajar JS lorem100
+            </b>
             <div className="h-[50px]">
               <hr className="bg-black h-0.5" />
               <div className="flex justify-between items-center h-full">
@@ -89,11 +82,11 @@ const CardComponent: CardProps = () => {
               <Star fill="#ff0" className="cursor-pointer text-yellow-500" />
             </div>
 
-            <Button className="text-white bg-sky-600 rounded-xl">
+            <Button className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
               enrol now
             </Button>
           </CardFooter>
-        </Tilt>
+        </div>
       </Card>
     </div>
   );
