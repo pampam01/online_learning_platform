@@ -5,15 +5,18 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsChevronRight } from "react-icons/bs";
 import { useState } from "react";
 import useMenuRef from "@/app/hooks/useMenuRef";
+import Modal from "./Modal";
 
 const Header = () => {
   const [nav, setNav] = useState(false);
   const [categoryContent, setCategoryContent] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   let navbarRef = useMenuRef(setNav);
   return (
-    <nav className="">
+    <nav>
       {/* container */}
       <div className="flex justify-between items-center px-6 py-4 tablet:py-0 shadow-[0_2px_6px_-1px_rgb(0_0_0_/_0.2)]">
+        <Modal isOpen={openModal} setIsOpen={setOpenModal} />
         {/* KIRI */}
 
         <div className="flex flex-row items-center">
@@ -95,9 +98,13 @@ const Header = () => {
         </div>
         {/* KANAN */}
         <div className="hidden tablet:flex gap-x-2">
-          <button className="px-4 py-2 border border-black hover:bg-gray-100">
+          <button
+            className="px-4 py-2 border border-black hover:bg-gray-100"
+            onClick={() => setOpenModal(true)}
+          >
             Login
           </button>
+
           <button className="px-4 py-2 bg-blue-900 text-white hover:bg-slate-800">
             Daftar
           </button>
@@ -118,7 +125,9 @@ const Header = () => {
         ref={navbarRef}
       >
         <div className="flex flex-col items-start py-4 border-b-2 gap-y-3 px-4 relative">
-          <button className="text-blue-700">Login</button>
+          <button className="text-blue-700" onClick={() => setOpenModal(true)}>
+            Login
+          </button>
           <button className="text-blue-700">Daftar</button>
           <div
             className="absolute -right-16 border rounded-full p-2 bg-slate-300 cursor-pointer"
