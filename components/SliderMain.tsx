@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
@@ -29,7 +28,7 @@ export default function SliderMain({ images }: CarouselProps) {
       <div>
         <button
           onClick={prevImage}
-          className="absolute left-[2%] top-[50%] z-[40]"
+          className="absolute left-[2%] top-[50%] z-10"
         >
           <BsArrowLeft />
         </button>
@@ -63,7 +62,7 @@ export default function SliderMain({ images }: CarouselProps) {
 
         <button
           onClick={nextImage}
-          className="absolute right-[2%] top-[50%] z-[40]"
+          className="absolute right-[2%] top-[50%] z-10 "
         >
           <BsArrowRight />
         </button>

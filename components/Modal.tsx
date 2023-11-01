@@ -36,7 +36,7 @@ export default function Modal({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black/25" />
+            <div className="fixed inset-0 bg-black/25 backdrop-blur-sm" />
           </Transition.Child>
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
@@ -60,11 +60,14 @@ export default function Modal({
                   <div className="flex flex-col mt-4 gap-y-6">
                     <input
                       type="text"
+                      name="username"
+                      autoCapitalize="words"
                       placeholder="Username"
                       className="border-2 py-2 px-4 rounded-lg w-full focus:outline-none focus:border-black/30"
                     />
                     <input
                       type="text"
+                      name="email"
                       placeholder="Email"
                       className="border-2 py-2 px-4 rounded-lg w-full focus:outline-none focus:border-black/30"
                     />

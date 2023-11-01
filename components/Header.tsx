@@ -4,7 +4,7 @@ import { BiSearch } from "react-icons/bi";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsChevronRight } from "react-icons/bs";
 import { useState } from "react";
-import useMenuRef from "@/app/hooks/useMenuRef";
+import useMenuRef from "@/utils/hooks/useMenuRef";
 import Modal from "./Modal";
 
 const Header = () => {
@@ -12,6 +12,13 @@ const Header = () => {
   const [categoryContent, setCategoryContent] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   let navbarRef = useMenuRef(setNav);
+
+  const handleSidebarLogin = () => {
+    setOpenModal(true);
+
+    setNav(false);
+  };
+
   return (
     <nav>
       {/* container */}
@@ -38,7 +45,7 @@ const Header = () => {
                 Kategori
               </Link>
               {/* navigation content */}
-              <div className="hidden group-hover/categories:flex flex-row text-sm left-0 top-16 bg-white border absolute">
+              <div className="hidden group-hover/categories:flex flex-row left-0 top-16 bg-white border absolute z-50">
                 {/* navigation categories */}
                 <ul className="py-2 px-3 flex flex-col gap-y-4 w-60">
                   <li
@@ -125,7 +132,7 @@ const Header = () => {
         ref={navbarRef}
       >
         <div className="flex flex-col items-start py-4 border-b-2 gap-y-3 px-4 relative">
-          <button className="text-blue-700" onClick={() => setOpenModal(true)}>
+          <button className="text-blue-700" onClick={handleSidebarLogin}>
             Login
           </button>
           <button className="text-blue-700">Daftar</button>
