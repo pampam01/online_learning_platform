@@ -9,7 +9,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const ActiveSlider: React.FC = () => {
   return (
-    <div className="w-[50%] h-[50%]  m-auto shadow-[0px_2px_5px_rgba(0,0,0,0.5)] p-6 bg-white xl:w-full mb-10">
+    <div className="w-[50%] h-[50%] xs:w-full xs:h-[70%]  m-auto shadow-[0px_2px_5px_rgba(0,0,0,0.5)] p-6 bg-white xl:w-full mb-10">
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         spaceBetween={10}
