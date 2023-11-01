@@ -109,7 +109,7 @@ const Header = () => {
       </div>
       {/* small media sidebar */}
       <div
-        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 left-0 duration-200 ease-in-out h-full w-[70%] bg-slate-300 ${
+        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 left-0 duration-200 ease-in-out h-full w-[70%] bg-slate-300 z-20 ${
           nav ? "scale-x-100" : "scale-x-0"
         }`}
         ref={navbarRef}

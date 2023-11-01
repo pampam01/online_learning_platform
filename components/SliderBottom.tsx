@@ -18,7 +18,7 @@ import { Button } from "./ui/button";
 
 export default function SliderBottom(): React.JSX.Element {
   return (
-    <>
+    <div>
       <Swiper
         slidesPerView="auto"
         spaceBetween={10}
@@ -43,7 +43,7 @@ export default function SliderBottom(): React.JSX.Element {
         modules={[Navigation, Pagination, A11y]}
         className="w-auto h-auto max-w-full flex relative justify-center items-center m-auto"
       >
-        {ServiceData.map((item, index) => (
+        {ServiceData.map((item) => (
           <SwiperSlide
             key={item.title}
             className=" h-[100%] w-[100%] max-w-md xs:w-full xs:h-[100vh]"
@@ -52,9 +52,9 @@ export default function SliderBottom(): React.JSX.Element {
               <Image
                 src={item.backgroundImage}
                 alt="baground"
-                fill={true}
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
+                sizes="full"
               />
               <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
               <div className="relative flex flex-col gap-3">
@@ -68,7 +68,7 @@ export default function SliderBottom(): React.JSX.Element {
         ))}
         <SwiperNavButtons />
       </Swiper>
-    </>
+    </div>
   );
 }
 
