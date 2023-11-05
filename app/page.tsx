@@ -12,7 +12,6 @@ const Page = () => {
       <CardComponent />
       <Slider />
       <SliderBottom />
-      ewfwetrw
     </>
   );
 };
