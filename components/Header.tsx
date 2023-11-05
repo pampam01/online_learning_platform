@@ -6,6 +6,7 @@ import { BsChevronRight } from "react-icons/bs";
 import { useState } from "react";
 import useMenuRef from "@/utils/hooks/useMenuRef";
 import Modal from "./Modal";
+import { Button } from "./ui/button";
 
 const Header = () => {
   const [nav, setNav] = useState(false);
@@ -105,16 +106,15 @@ const Header = () => {
         </div>
         {/* KANAN */}
         <div className="hidden tablet:flex gap-x-2">
-          <button
-            className="px-4 py-2 border border-black hover:bg-gray-100"
+          <Button
+            variant={"outline"}
+            className="px-4 py-2"
             onClick={() => setOpenModal(true)}
           >
             Login
-          </button>
+          </Button>
 
-          <button className="px-4 py-2 bg-blue-900 text-white hover:bg-slate-800">
-            Daftar
-          </button>
+          <Button className="px-4 py-2 ">Daftar</Button>
         </div>
         {/* burger button */}
         <div
