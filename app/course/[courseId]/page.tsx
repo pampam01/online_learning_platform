@@ -1,8 +1,8 @@
 "use client";
 import { redirect, useParams, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
-const SingleCoursePage = () => {
+const SingleCoursePage = (): React.JSX.Element => {
   const { courseId } = useParams();
   return <div>Course with ID: {courseId}</div>;
 };
