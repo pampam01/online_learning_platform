@@ -14,7 +14,7 @@ const page = () => {
         <Button variant={"destructive"}>destructive</Button>
         <Button variant={"link"}>link</Button>
       </div>
-      <h1>Dark Mode</h1>
+      <h1 className="pt-6">Dark Mode</h1>
       <ModeToggle />
     </section>
   );
