@@ -7,33 +7,30 @@ import { useState } from "react";
 import useMenuRef from "@/utils/hooks/useMenuRef";
 import Modal from "./Modal";
 import { Button } from "./ui/button";
+import { Dialog, DialogTrigger } from "./ui/dialog";
+import { ModeToggle } from "./ModeToggle";
+import { Input } from "./ui/input";
 
 const Header = () => {
   const [nav, setNav] = useState(false);
   const [categoryContent, setCategoryContent] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
   let navbarRef = useMenuRef(setNav);
-
-  const handleSidebarLogin = () => {
-    setOpenModal(true);
-
-    setNav(false);
-  };
 
   return (
     <nav>
       {/* container */}
       <div className="flex justify-between items-center px-6 py-4 tablet:py-0 shadow-[0_2px_6px_-1px_rgb(0_0_0_/_0.2)]">
-        <Modal isOpen={openModal} setIsOpen={setOpenModal} />
         {/* KIRI */}
 
         <div className="flex flex-row items-center">
           {/* logo */}
-          <div className="text-lg font-bold cursor-pointer">OpenEdu</div>
+          <Link href="/" className="text-lg font-bold cursor-pointer">
+            OpenEdu
+          </Link>
           {/* search-bar */}
           <div className="hidden xs:flex relative mx-2 sm:mx-0 sm:ml-6">
             <BiSearch className="absolute left-2 top-2" color="gray" />
-            <input
+            <Input
               type="text"
               className="focus:outline focus:outline-blue-500 duration-200 h-8 flex items-center pr-2 pl-8 outline outline-1 outline-slate-500 border-gray-300 rounded-full text-sm "
               placeholder="cari sesuatu..."
@@ -46,7 +43,7 @@ const Header = () => {
                 Kategori
               </Link>
               {/* navigation content */}
-              <div className="hidden group-hover/categories:flex flex-row left-0 top-16 bg-white border absolute z-50">
+              <div className="hidden group-hover/categories:flex flex-row left-0 top-16 bg-white dark:bg-primary-foreground border absolute z-50">
                 {/* navigation categories */}
                 <ul className="py-2 px-3 flex flex-col gap-y-4 w-60">
                   <li
@@ -102,17 +99,24 @@ const Header = () => {
                 Tentang kami
               </Link>
             </li>
+            <li className="py-5">
+              <Link href="/docs" className="px-4 hover:text-blue-800">
+                UI Docs
+              </Link>
+            </li>
           </ul>
         </div>
         {/* KANAN */}
         <div className="hidden tablet:flex gap-x-2">
-          <Button
-            variant={"outline"}
-            className="px-4 py-2"
-            onClick={() => setOpenModal(true)}
-          >
-            Login
-          </Button>
+          <ModeToggle />
+          <Dialog>
+            <Modal />
+            <DialogTrigger asChild>
+              <Button variant={"outline"} className="px-4 py-2">
+                Login
+              </Button>
+            </DialogTrigger>
+          </Dialog>
 
           <Button className="px-4 py-2 ">Daftar</Button>
         </div>
@@ -132,10 +136,19 @@ const Header = () => {
         ref={navbarRef}
       >
         <div className="flex flex-col items-start py-4 border-b-2 gap-y-3 px-4 relative">
-          <button className="text-blue-700" onClick={handleSidebarLogin}>
-            Login
-          </button>
-          <button className="text-blue-700">Daftar</button>
+          <Dialog>
+            <Modal />
+            <DialogTrigger asChild>
+              <Button
+                variant={"outline"}
+                className="px-4 py-2"
+                onClick={() => setNav(!nav)}
+              >
+                Login
+              </Button>
+            </DialogTrigger>
+          </Dialog>
+          <Button>Daftar</Button>
           <div
             className="absolute -right-16 border rounded-full p-2 bg-slate-300 cursor-pointer"
             onClick={() => setNav(!nav)}
