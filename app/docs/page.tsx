@@ -16,6 +16,7 @@ const page = () => {
       </div>
       <h1 className="pt-6">Dark Mode</h1>
       <ModeToggle />
+      <h1 className="pt-6">Accordion</h1>
     </section>
   );
 };

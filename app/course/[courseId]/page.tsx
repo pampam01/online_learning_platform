@@ -5,6 +5,7 @@ const SingleCoursePage = () => {
   return (
     <main>
       <Banner />
+      accordion
     </main>
   );
 };
