@@ -1,10 +1,14 @@
-"use client";
-import { redirect, useParams, useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import { CourseList } from "@/components/Accordion";
+import Banner from "@/components/Banner";
 
-const SingleCoursePage = (): React.JSX.Element => {
-  const { courseId } = useParams();
-  return <div>Course with ID: {courseId}</div>;
+const SingleCoursePage = () => {
+  // const { courseId } = useParams();
+  return (
+    <main>
+      <Banner />
+      {/* <CourseList /> */}
+    </main>
+  );
 };
 
 export default SingleCoursePage;
