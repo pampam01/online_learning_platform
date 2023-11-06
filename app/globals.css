@@ -6,7 +6,7 @@
   max-width: 1536px;
 }
 
-@media screen and (max-width: 1536px) {
+/* @media screen and (max-width: 1536px) {
   .container {
     max-width: 1366px;
   }
@@ -25,7 +25,7 @@
   .container {
     max-width: 475px;
   }
-}
+} */
 
 @layer base {
   :root {
