@@ -1,3 +1,4 @@
+import { CourseList } from "@/components/Accordion";
 import Banner from "@/components/Banner";
 
 const SingleCoursePage = () => {
@@ -5,7 +6,7 @@ const SingleCoursePage = () => {
   return (
     <main>
       <Banner />
-      accordion
+      {/* <CourseList /> */}
     </main>
   );
 };
