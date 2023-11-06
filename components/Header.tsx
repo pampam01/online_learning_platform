@@ -104,6 +104,14 @@ const Header = () => {
                 UI Docs
               </Link>
             </li>
+            <li className="py-5">
+              <Link
+                href="/course/web-development"
+                className="px-4 hover:text-blue-800"
+              >
+                ex:Single Course
+              </Link>
+            </li>
           </ul>
         </div>
         {/* KANAN */}
