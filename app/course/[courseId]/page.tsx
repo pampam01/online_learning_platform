@@ -1,15 +1,15 @@
-import { CourseList } from "@/components/Accordion";
+import { CourseAccordion } from "@/components/CourseAccordion";
 import Banner from "@/components/Banner";
+import CourseTabs from "@/components/CourseTabs";
 
 const SingleCoursePage = () => {
   // const { courseId } = useParams();
   return (
     <main>
       <Banner />
-      {/* <CourseList /> */}
-      <div>
-        <p></p>
-        
+      <div className="flex flex-row gap-x-4">
+        <CourseTabs className="flex-[3] mt-6" />
+        <div className="flex-[2]"></div>
       </div>
     </main>
   );

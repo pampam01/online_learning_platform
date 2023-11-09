@@ -1,4 +1,4 @@
-import { CourseList } from "@/components/Accordion";
+import { CourseList } from "@/components/CourseAccordion";
 import { ModeToggle } from "@/components/ModeToggle";
 import { Button } from "@/components/ui/button";
 import React from "react";

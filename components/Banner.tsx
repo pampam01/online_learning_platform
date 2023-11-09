@@ -12,7 +12,7 @@ import { MdEditCalendar, MdLanguage, MdSubtitles } from "react-icons/md";
 
 const Banner = () => {
   return (
-    <section className="flex flex-col-reverse xl:flex-row mt-4 p-0 md:p-8 rounded-md md:border-2 md:bg-gradient-to-br from-purple-800 to-blue-800 md:dark:bg-gradient-to-br dark:from-blue-950 dark:to-purple-950 text-secondary-foreground">
+    <section className="flex flex-col-reverse xl:flex-row mt-4 p-0 md:p-8 rounded-md md:bg-gradient-to-br from-purple-800 to-blue-800 md:dark:bg-gradient-to-br dark:from-blue-950 dark:to-purple-950 text-secondary-foreground">
       {/* kiri */}
       <div>
         <div className="flex flex-col justify-between h-full">
