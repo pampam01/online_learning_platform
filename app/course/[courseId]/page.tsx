@@ -7,6 +7,10 @@ const SingleCoursePage = () => {
     <main>
       <Banner />
       {/* <CourseList /> */}
+      <div>
+        <p></p>
+        
+      </div>
     </main>
   );
 };

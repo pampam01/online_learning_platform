@@ -138,7 +138,7 @@ const Header = () => {
       </div>
       {/* small media sidebar */}
       <div
-        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 duration-500 ease-in-out h-full w-[70%] z-50 bg-slate-100 ${
+        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 duration-500 ease-in-out h-full w-[70%] z-50 bg-secondary ${
           nav ? " left-0" : "overflow-hidden left-[-650px]"
         }`}
         ref={navbarRef}

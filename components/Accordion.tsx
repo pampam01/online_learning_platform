@@ -10,7 +10,7 @@ import { MdAssignment } from "react-icons/md";
 
 export function CourseList() {
   return (
-    <Accordion type="multiple" className="w-full">
+    <Accordion type="multiple" className="w-full rounded-t-lg overflow-hidden">
       <AccordionItem value="item-1">
         <AccordionTrigger>
           Berkenalan Dengan Dunia Web Development
