@@ -62,14 +62,14 @@ const Footer = () => {
               alt=""
               height={0}
               width={150}
-              className="cursor-pointer"
+              className="cursor-pointer w-auto h-auto"
             />
             <Image
               src="/app_store.png"
               alt=""
               height={0}
               width={150}
-              className="cursor-pointer"
+              className="cursor-pointer w-auto h-auto"
             />
           </div>
         </div>
