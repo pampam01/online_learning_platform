@@ -26,7 +26,7 @@ const Header = ({
         alt={name}
         width="200"
         height="200"
-        className="rounded-t-lg w-auto h-auto object-cover"
+        className="rounded-t-lg w-auto h-auto object-cover  aspect-video"
       />
     </CardHeader>
   );
