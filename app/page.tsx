@@ -1,16 +1,18 @@
-import CardComponent from "@/components/Card";
-import Slider from "@/components/Slider";
-import SliderBottom from "@/components/SliderBottom";
+import CardComponent from "@/components/cards/Card";
+import Slider from "@/components/slider/Slider";
+import SliderBottom from "@/components/slider/SliderBottom";
+import CardsHome from "@/components/cards/Cards";
 
-import SliderMain from "@/components/SliderMain";
+import SliderMain from "@/components/slider/SliderMain";
 
 const images = ["/images/a.jpg", "/images/b.jpg"];
 const Page = () => {
   return (
     <>
       <SliderMain images={images} />
-      <CardComponent />
-      <Slider />
+      <CardsHome />
+      {/* <Slider /> */}
+      {/* <CardVertical /> */}
       <SliderBottom />
     </>
   );

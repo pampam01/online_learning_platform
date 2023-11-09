@@ -1,10 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
+
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -14,9 +13,9 @@ import Image from "next/image";
 
 import { ServiceData } from "@/constants/slider";
 import { RxArrowTopRight } from "react-icons/rx";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
-export default function SliderBottom(): React.JSX.Element {
+export default function SliderBottom() {
   return (
     <div>
       <Swiper

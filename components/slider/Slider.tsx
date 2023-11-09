@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation, Pagination, A11y } from "swiper/modules";
-import CardComponent from "./Card";
-import { Button } from "./ui/button";
+import CardsHome from "../cards/Cards";
+import { Button } from "../ui/button";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const ActiveSlider: React.FC = () => {
@@ -18,22 +18,22 @@ const ActiveSlider: React.FC = () => {
       >
         <SwiperSlide>
           <div className="text-black flex items-center justify-center mx-auto h-auto w-auto">
-            <CardComponent />
+            <CardsHome />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="text-black flex items-center justify-center mx-auto h-auto w-auto">
-            <CardComponent />
+            <CardsHome />
           </div>
         </SwiperSlide>{" "}
         <SwiperSlide>
           <div className="text-black flex items-center justify-center mx-auto h-auto w-auto">
-            <CardComponent />
+            <CardsHome />
           </div>
         </SwiperSlide>{" "}
         <SwiperSlide>
           <div className="text-black flex items-center justify-center mx-auto h-auto w-auto">
-            <CardComponent />
+            <CardsHome />
           </div>
         </SwiperSlide>
         <SwiperNavButtons />

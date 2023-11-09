@@ -14,7 +14,14 @@ import SpaceCity7 from "../public/images/SpaceCity7.jpeg";
 import SpaceCity8 from "../public/images/SpaceCity8.jpeg";
 import SpaceCity9 from "../public/images/SpaceCity9.jpeg";
 
-export const ServiceData = [
+interface Service {
+  icon: any;
+  title: string;
+  content: string;
+  backgroundImage: any;
+}
+
+export const ServiceData: Service[] = [
   {
     icon: RxCrop,
     title: "Development",

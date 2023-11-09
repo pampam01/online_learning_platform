@@ -1,9 +1,7 @@
 "use client";
-import CardComponent from "@/components/Card";
+import CardComponent from "@/components/cards/Card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Star,
-} from "lucide-react";
+import { Star } from "lucide-react";
 import Link from "next/link";
 // import { redirect, useParams, useRouter } from "next/navigation";
 import React from "react";
@@ -130,7 +128,9 @@ const Banner = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <CardComponent />
+        {/* <CardComponent>
+
+        </CardComponent> */}
       </div>
     </section>
   );
