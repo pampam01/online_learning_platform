@@ -1,7 +1,9 @@
 "use client";
-import { CourseList } from "@/components/Accordion";
+import { CourseAccordion } from "@/components/CourseAccordion";
 import Banner from "@/components/Banner";
+import CourseTabs from "@/components/CourseTabs";
 import { useParams } from "next/navigation";
+import CardsHome from "@/components/cards/Cards";
 
 const SingleCoursePage = () => {
   const { courseId } = useParams();
@@ -9,7 +11,9 @@ const SingleCoursePage = () => {
     <main>
       <Banner />
       <p>{courseId}</p>
-      {/* <CourseList /> */}
+      <div className="flex flex-row gap-x-4">
+        <CourseTabs className="mt-6" />
+      </div>
     </main>
   );
 };

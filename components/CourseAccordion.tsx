@@ -4,13 +4,18 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 import { DownloadIcon, LockIcon, Video } from "lucide-react";
 import Link from "next/link";
 import { MdAssignment } from "react-icons/md";
 
-export function CourseList() {
+export function CourseAccordion({ className }: { className?: string }) {
   return (
-    <Accordion type="multiple" className="w-full">
+    <Accordion
+      type="multiple"
+      defaultValue={["item-1"]}
+      className={cn(`w-full rounded-t-lg overflow-hidden ${className}`)}
+    >
       <AccordionItem value="item-1">
         <AccordionTrigger>
           Berkenalan Dengan Dunia Web Development
@@ -54,15 +59,16 @@ export function CourseList() {
       <AccordionItem value="item-2">
         <AccordionTrigger>Is it styled?</AccordionTrigger>
         <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ipsam
+          assumenda dolorum ducimus voluptatibus nam itaque quam, pariatur
+          veritatis porro.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
         <AccordionTrigger>Is it animated?</AccordionTrigger>
         <AccordionContent>
-          Yes. It&apos;s animated by default, but you can disable it if you
-          prefer.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati nam
+          qui esse numquam temporibus quisquam id commodi quaerat magni atque.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
