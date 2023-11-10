@@ -7,12 +7,13 @@ import Link from "next/link";
 import React from "react";
 import { BsPerson } from "react-icons/bs";
 import { MdEditCalendar, MdLanguage, MdSubtitles } from "react-icons/md";
+import CardsHome from "./cards/Cards";
 
 const Banner = () => {
   return (
-    <section className="flex flex-col-reverse xl:flex-row mt-4 p-0 md:p-8 rounded-md md:bg-gradient-to-br from-purple-800 to-blue-800 md:dark:bg-gradient-to-br dark:from-blue-950 dark:to-purple-950 text-secondary-foreground">
+    <section className="flex flex-col-reverse md:h-[23rem] xl:flex-row mt-4 md:p-8 p-4 rounded-md bg-gradient-to-br from-purple-800 to-blue-800 dark:bg-gradient-to-br dark:from-blue-950 dark:to-purple-950 text-secondary-foreground">
       {/* kiri */}
-      <div>
+      <div className="flex-[3]">
         <div className="flex flex-col justify-between h-full">
           {/* atas */}
           <div>
@@ -34,7 +35,10 @@ const Banner = () => {
                 <p>Bahasa : inggris</p>
               </div>
               <div className="flex flex-row md:items-center items-start gap-x-2 md:gap-x-1">
-                <MdSubtitles size={20} />
+                {/* note given size because the lenght of the text is too long */}
+                <div className="text-lg">
+                  <MdSubtitles />
+                </div>
                 <p>
                   Subtitle tersedia :{" "}
                   <span className="underline hover:text-gray-300 cursor-pointer">
@@ -126,11 +130,6 @@ const Banner = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center">
-        {/* <CardComponent>
-
-        </CardComponent> */}
       </div>
     </section>
   );
