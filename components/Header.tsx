@@ -138,7 +138,7 @@ const Header = () => {
       </div>
       {/* small media sidebar */}
       <div
-        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 duration-500 ease-in-out h-full w-[70%] z-50 bg-secondary ${
+        className={`flex flex-col tablet:hidden absolute transform origin-left top-0 duration-500 ease-in-out h-full w-[70%] z-50 bg-secondary text-secondary-foreground ${
           nav ? " left-0" : "overflow-hidden left-[-650px]"
         }`}
         ref={navbarRef}
@@ -157,6 +157,8 @@ const Header = () => {
             </DialogTrigger>
           </Dialog>
           <Button>Daftar</Button>
+          <ModeToggle />
+
           <div
             className="absolute -right-16 border rounded-full p-2 bg-slate-300 cursor-pointer"
             onClick={() => setNav(!nav)}
