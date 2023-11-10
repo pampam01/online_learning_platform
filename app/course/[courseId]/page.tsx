@@ -3,6 +3,7 @@ import { CourseAccordion } from "@/components/CourseAccordion";
 import Banner from "@/components/Banner";
 import CourseTabs from "@/components/CourseTabs";
 import { useParams } from "next/navigation";
+import CardsHome from "@/components/cards/Cards";
 
 const SingleCoursePage = () => {
   const { courseId } = useParams();
@@ -11,8 +12,7 @@ const SingleCoursePage = () => {
       <Banner />
       <p>{courseId}</p>
       <div className="flex flex-row gap-x-4">
-        <CourseTabs className="flex-[3] mt-6" />
-        <div className="flex-[2]"></div>
+        <CourseTabs className="mt-6" />
       </div>
     </main>
   );
