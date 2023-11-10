@@ -1,4 +1,4 @@
-import { CourseList } from "@/components/CourseAccordion";
+import { CourseAccordion } from "@/components/CourseAccordion";
 import { ModeToggle } from "@/components/ModeToggle";
 import { Button } from "@/components/ui/button";
 import React from "react";
@@ -18,7 +18,7 @@ const page = () => {
       <h1 className="pt-6">Dark Mode</h1>
       <ModeToggle />
       <h1 className="pt-6">Accordion</h1>
-      <CourseList />
+      <CourseAccordion />
     </section>
   );
 };
