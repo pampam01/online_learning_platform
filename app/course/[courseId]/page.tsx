@@ -1,19 +1,12 @@
-"use client";
-import { CourseAccordion } from "@/components/CourseAccordion";
 import Banner from "@/components/Banner";
 import CourseTabs from "@/components/CourseTabs";
-import { useParams } from "next/navigation";
-import CardsHome from "@/components/cards/Cards";
-
+import CourseFeature from "@/components/CourseFeature";
 const SingleCoursePage = () => {
-  const { courseId } = useParams();
   return (
     <main>
       <Banner />
-      <p>{courseId}</p>
-      <div className="flex flex-row gap-x-4">
-        <CourseTabs className="mt-6" />
-      </div>
+      <CourseFeature className="mt-2" />
+      <CourseTabs className="mt-6" />
     </main>
   );
 };
