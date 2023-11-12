@@ -12,7 +12,7 @@ import { ServiceData } from "@/constants/slider";
 
 const Banner = ({ courseId }: { courseId: string | string[] }) => {
   return (
-    <section className="flex flex-col-reverse md:h-[23rem] xl:flex-row mt-4 md:p-8 p-4 rounded-md bg-gradient-to-br from-purple-800 to-blue-800 dark:bg-gradient-to-br dark:from-blue-950 dark:to-purple-950 text-secondary-foreground">
+    <section className="flex flex-col-reverse xl:flex-row mt-4 md:p-8 p-4 rounded-md bg-gradient-to-br from-purple-800 to-blue-800 dark:bg-gradient-to-br dark:from-blue-950 dark:to-purple-950 text-secondary-foreground gap-x-4">
       {/* kiri */}
       <div className="flex-[3]">
         <div className="flex flex-col justify-between h-full">
@@ -133,12 +133,9 @@ const Banner = ({ courseId }: { courseId: string | string[] }) => {
         </div>
       </div>
       {/* kanan */}
-      <div>
+      <div className="flex flex-col items-center">
         {ServiceData.filter((item) => item.title === courseId).map((item) => (
-          <CardComponent
-            key={item.title}
-            className="m-0 p-0 h-[12rem] bg-red-50"
-          >
+          <CardComponent key={item.title} className="">
             <CardComponent.Header images={item.backgroundImage} />
             <CardComponent.Body
               title={item.title}
