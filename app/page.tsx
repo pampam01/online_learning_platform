@@ -11,7 +11,7 @@ const Page = () => {
     <>
       <SliderMain images={images} />
       <CardsHome />
-      {/* <Slider /> */}
+      <Slider />
       {/* <CardVertical /> */}
       <SliderBottom />
     </>
