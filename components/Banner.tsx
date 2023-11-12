@@ -8,10 +8,11 @@ import React from "react";
 import { BsPerson } from "react-icons/bs";
 import { MdEditCalendar, MdLanguage, MdSubtitles } from "react-icons/md";
 import CardsHome from "./cards/Cards";
+import { ServiceData } from "@/constants/slider";
 
-const Banner = () => {
+const Banner = ({ courseId }: { courseId: string | string[] }) => {
   return (
-    <section className="flex flex-col-reverse md:h-[23rem] xl:flex-row mt-4 md:p-8 p-4 rounded-md bg-gradient-to-br from-purple-800 to-blue-800 dark:bg-gradient-to-br dark:from-blue-950 dark:to-purple-950 text-secondary-foreground">
+    <section className="flex flex-col-reverse xl:flex-row mt-4 md:p-8 p-4 rounded-md bg-gradient-to-br from-purple-800 to-blue-800 dark:bg-gradient-to-br dark:from-blue-950 dark:to-purple-950 text-secondary-foreground gap-x-4">
       {/* kiri */}
       <div className="flex-[3]">
         <div className="flex flex-col justify-between h-full">
@@ -130,6 +131,23 @@ const Banner = () => {
             </div>
           </div>
         </div>
+      </div>
+      {/* kanan */}
+      <div className="flex flex-col items-center">
+        {ServiceData.filter((item) => item.title === courseId).map((item) => (
+          <CardComponent key={item.title} className="">
+            <CardComponent.Header images={item.backgroundImage} />
+            <CardComponent.Body
+              title={item.title}
+              icon={item.icon}
+              author="pampam"
+              graduate="s1 manajemen"
+            >
+              {item.content}
+            </CardComponent.Body>
+            <CardComponent.Footer price={1000} />
+          </CardComponent>
+        ))}
       </div>
     </section>
   );
