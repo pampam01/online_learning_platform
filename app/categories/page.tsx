@@ -58,6 +58,7 @@ export function SkeletonDemo({ isActive }: { isActive: boolean }) {
     <div className="flex items-center space-x-4 w-full h-full">
       <Skeleton className="h-80 w-80 rounded-full" />
       <div className="space-y-2">
+        <div>loader</div>
         <Skeleton className="h-32 w-[800px]" />
         <Skeleton className="h-32 w-[800px]" />
       </div>
