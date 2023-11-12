@@ -39,9 +39,9 @@ const Header = () => {
           {/* links */}
           <ul className="hidden relative tablet:flex ml-2">
             <li className="relative group/categories py-5">
-              <Link href="/" className="px-4 hover:text-blue-800">
+              <p className="px-4 hover:text-blue-800 cursor-pointer">
                 Kategori
-              </Link>
+              </p>
               {/* navigation content */}
               <div className="hidden group-hover/categories:flex flex-row left-0 top-16 bg-white dark:bg-primary-foreground border absolute z-50">
                 {/* navigation categories */}
@@ -75,16 +75,22 @@ const Header = () => {
                   }`}
                 >
                   <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
-                    <p>Pengembangan Web</p>
+                    <Link href="/categories/pengembangan-web">
+                      Pengembangan Web
+                    </Link>
                   </li>
                   <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
-                    <p>Pengembangan Android</p>
+                    <Link href="/categories/pengembangan-android">
+                      Pengembangan Android
+                    </Link>
                   </li>
                   <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
-                    <p>Pengembangan Game</p>
+                    <Link href="/categories/engembangan-game">
+                      Pengembangan Game
+                    </Link>
                   </li>
                   <li className="flex justify-between items-center hover:text-blue-800 cursor-pointer">
-                    <p>Robotik</p>
+                    <Link href="/categories/robotik">Robotik</Link>
                   </li>
                 </ul>
               </div>
