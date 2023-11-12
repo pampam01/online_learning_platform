@@ -1,18 +1,26 @@
 "use client";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import Image, { StaticImageData } from "next/image";
-import Gambar from "@/public/images/contoh.png";
 import { Play, Star, StarHalf } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Icon } from "next/dist/lib/metadata/types/metadata-types";
+import Image from "next/image";
 
-const CardComponent = ({ children }: { children: React.ReactNode }) => {
+const CardComponent = ({
+  className,
+  children,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
   return (
-    <div className=" w-auto h-auto max-w-xs shadow-2xl transition ease-in-out hover:scale-95 md:max-w-xl m-5  xl:max-w-xl">
+    <div
+      className={cn(
+        ` w-auto h-auto max-w-xs shadow-2xl transition ease-in-out hover:scale-95 md:max-w-xl m-5  xl:max-w-xl ${className}`
+      )}
+    >
       <Card className=" bg-[#151030] text-white ">{children}</Card>
     </div>
   );
@@ -20,17 +28,24 @@ const CardComponent = ({ children }: { children: React.ReactNode }) => {
 
 interface HeaderProps {
   images: string;
-  styles?: string | null;
+  className?: string;
+  widthImage?: number;
+  heightImage?: number;
 }
-const Header = ({ images, styles }: HeaderProps) => {
+const Header = ({
+  images,
+  className,
+  widthImage = 200,
+  heightImage = 200,
+}: HeaderProps) => {
   return (
-    <div className={cn(`flex justify-center p-8 items-center ${styles}`)}>
-      <img
+    <div className={`flex justify-between p-8 items-center  ${className}`}>
+      <Image
         src={images}
         alt="Gambar"
-        className="object-cover w-auto h-auto aspect-square"
-        width={200}
-        height={200}
+        className="object-cover w-auto h-auto aspect-video"
+        width={widthImage}
+        height={heightImage}
       />
     </div>
   );
@@ -38,14 +53,24 @@ const Header = ({ images, styles }: HeaderProps) => {
 
 interface BodyProps {
   title: string;
-  author: string;
-  graduate: string;
+  author?: string;
+  graduate?: string;
   children: string;
   icon: string;
+  className?: string;
 }
-const Body = ({ title, author, graduate, icon, children }: BodyProps) => {
+const Body = ({
+  title,
+  author,
+  graduate,
+  icon,
+  children,
+  className,
+}: BodyProps) => {
   return (
-    <CardContent className="flex flex-col py-0 pt-5 px-5 w-full ">
+    <CardContent
+      className={cn(`flex flex-col py-0 pt-5 px-5 w-full ${className}`)}
+    >
       <div className="flex justify-between w-full md:gap-x-4">
         <div className="flex gap-1 h-4 items-center justify-center">
           <div className="w-10 h-full rounded-full grid place-items-center ">
@@ -96,10 +121,19 @@ const Body = ({ title, author, graduate, icon, children }: BodyProps) => {
 interface FooterProps {
   price: number;
   buttonText?: string | "Enroll Now";
+  className?: string;
 }
-const Footer = ({ price, buttonText = "Enroll Now" }: FooterProps) => {
+const Footer = ({
+  price,
+  buttonText = "Enroll Now",
+  className,
+}: FooterProps) => {
   return (
-    <CardFooter className="flex justify-between gap-10 mt-4 xs:gap-20 p-8">
+    <CardFooter
+      className={cn(
+        `flex justify-between gap-10 mt-4 xs:gap-20 p-8 ${className}`
+      )}
+    >
       <div className="flex ">
         <h1 className="text-white font-bold  text-sm">
           {price.toLocaleString("id-ID", {
@@ -115,9 +149,6 @@ const Footer = ({ price, buttonText = "Enroll Now" }: FooterProps) => {
   );
 };
 
-const Container = () => {
-  return <div className="pl-0 pr-6"></div>;
-};
 CardComponent.Header = Header;
 CardComponent.Footer = Footer;
 CardComponent.Body = Body;
