@@ -17,9 +17,9 @@ const CategoryPage = () => {
   }, []);
   console.log(products);
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex justify-center flex-wrap gap-2 my-8">
       {ServiceData.map((item) => (
-        <CardComponent key={item.title} className="m-0 p-0">
+        <CardComponent key={item.title}>
           <CardComponent.Header images={item.backgroundImage} />
           <CardComponent.Body
             title={item.title}
