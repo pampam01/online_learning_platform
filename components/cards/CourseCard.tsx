@@ -1,10 +1,15 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import { cn } from "@/lib/utils";
 
 const CourseCard = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Card className="w-full max-w-xs bg-gray-800 border border-gray-200 rounded shadow m-2 flex  flex-col justify-between">
+    <Card
+      className={cn(
+        `w-full max-w-xs bg-gray-800 border border-gray-200 rounded shadow m-2 flex  flex-col justify-between`
+      )}
+    >
       {children}
     </Card>
   );
@@ -26,7 +31,7 @@ const Header = ({
         alt={name}
         width="200"
         height="200"
-        className="rounded-t-lg w-auto h-auto object-cover  aspect-video"
+        className={cn(`rounded-t-lg w-auto h-auto object-cover  aspect-video`)}
       />
     </CardHeader>
   );
@@ -34,7 +39,7 @@ const Header = ({
 
 const Body = ({ children, title }: { children: string; title: string }) => {
   return (
-    <CardContent className="px-5 pb-5 h-full">
+    <CardContent className={cn(`px-5 pb-5 h-full`)}>
       <h5 className="text-xl font-semibold tracking-tight text-white">
         {title.substring(0, 20)}...
       </h5>
@@ -53,7 +58,7 @@ const Footer = ({
   id?: number;
 }) => {
   return (
-    <CardFooter className="flex items-center justify-between px-5 pb-5 ">
+    <CardFooter className={cn(`flex items-center justify-between px-5 pb-5 `)}>
       <span className="text-sm font-bold text-white ">
         {" "}
         {price.toLocaleString("en-US", { style: "currency", currency: "USD" })}
